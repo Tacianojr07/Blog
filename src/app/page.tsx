@@ -6,6 +6,7 @@ import { SpinLoader } from "@/components/SpinLoader";
 import Link from "next/link";
 import Image from "next/image";
 import { PostHeading } from "@/components/PostHeading";
+import { PostCoverImage } from "@/components/PostCoverImage";
 
 export default async function Home() {
   return (
@@ -13,16 +14,18 @@ export default async function Home() {
       <Header />
 
       <section className="grid grid-cols-1 gap-8 mb-16 sm:grid-cols-2 group">
-        <Link className="w-full h-full overflow-hidden" href={"#"}>
-          <Image
-            className="group-hover:scale-110 transition-all duration-300 ease-in-out rounded-xl object-cover object-center"
-            src="/images/bryen_0.png"
-            alt="image"
-            width={1200}
-            height={720}
-            priority
-          />
-        </Link>
+        <PostCoverImage
+          linkProps={{
+            href: "/",
+          }}
+          imageProps={{
+            width: 1200,
+            height: 700,
+            src: "/images/bryen_9.png",
+            alt: "bryen",
+            priority: true,
+          }}
+        />
 
         <div className="flex flex-col gap-4 sm:justify-center">
           <time className="text-slate-600 text-sm/tight " dateTime="2025-02-22">
