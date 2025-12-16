@@ -3,8 +3,6 @@ import { Container } from "../components/Container";
 import PostList from "@/components/PostList";
 import { Suspense } from "react";
 import { SpinLoader } from "@/components/SpinLoader";
-import { PostHeading } from "@/components/PostHeading";
-import { PostCoverImage } from "@/components/PostCoverImage";
 import { PostFeatured } from "@/components/PostFeatured";
 
 export default async function Home() {
