@@ -3,8 +3,6 @@ import { Container } from "../components/Container";
 import PostList from "@/components/PostList";
 import { Suspense } from "react";
 import { SpinLoader } from "@/components/SpinLoader";
-import Link from "next/link";
-import Image from "next/image";
 import { PostHeading } from "@/components/PostHeading";
 import { PostCoverImage } from "@/components/PostCoverImage";
 
