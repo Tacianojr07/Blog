@@ -5,12 +5,17 @@ import { Suspense } from "react";
 import { SpinLoader } from "@/components/SpinLoader";
 import { PostHeading } from "@/components/PostHeading";
 import { PostCoverImage } from "@/components/PostCoverImage";
+<<<<<<< HEAD
+=======
+import { PostFeatured } from "@/components/PostFeatured";
+>>>>>>> e93cbe5 (project)
 
 export default async function Home() {
   return (
     <Container>
       <Header />
 
+<<<<<<< HEAD
       <section className="grid grid-cols-1 gap-8 mb-16 sm:grid-cols-2 group">
         <PostCoverImage
           linkProps={{
@@ -41,6 +46,11 @@ export default async function Home() {
           </p>
         </div>
       </section>
+=======
+      <Suspense fallback={<SpinLoader />}>
+        <PostFeatured />
+      </Suspense>
+>>>>>>> e93cbe5 (project)
 
       <Suspense fallback={<SpinLoader />}>
         <PostList />
