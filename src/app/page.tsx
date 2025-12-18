@@ -5,52 +5,16 @@ import { Suspense } from "react";
 import { SpinLoader } from "@/components/SpinLoader";
 import { PostHeading } from "@/components/PostHeading";
 import { PostCoverImage } from "@/components/PostCoverImage";
-<<<<<<< HEAD
-=======
 import { PostFeatured } from "@/components/PostFeatured";
->>>>>>> e93cbe5 (project)
 
 export default async function Home() {
   return (
     <Container>
       <Header />
 
-<<<<<<< HEAD
-      <section className="grid grid-cols-1 gap-8 mb-16 sm:grid-cols-2 group">
-        <PostCoverImage
-          linkProps={{
-            href: "/",
-          }}
-          imageProps={{
-            width: 1200,
-            height: 700,
-            src: "/images/bryen_9.png",
-            alt: "bryen",
-            priority: true,
-          }}
-        />
-
-        <div className="flex flex-col gap-4 sm:justify-center">
-          <time className="text-slate-600 text-sm/tight " dateTime="2025-02-22">
-            {" "}
-            2025-02-22
-          </time>
-
-          <PostHeading as="h1" url="#">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima,
-            facere accusamus praesentium veritatis tenetur quis eaque
-          </PostHeading>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum
-          </p>
-        </div>
-      </section>
-=======
       <Suspense fallback={<SpinLoader />}>
         <PostFeatured />
       </Suspense>
->>>>>>> e93cbe5 (project)
 
       <Suspense fallback={<SpinLoader />}>
         <PostList />
