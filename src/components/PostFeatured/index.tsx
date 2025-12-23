@@ -1,6 +1,5 @@
 import { postRepository } from "@/repositories/post/json-post-repository";
 import { PostCoverImage } from "../PostCoverImage";
-import { PostHeading } from "../PostHeading";
 import { PostSummary } from "../PostSummary";
 
 export async function PostFeatured() {

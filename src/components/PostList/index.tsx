@@ -1,10 +1,10 @@
-import { postRepository } from "@/repositories/post/json-post-repository";
 import { PostCoverImage } from "../PostCoverImage";
 
 import { PostSummary } from "../PostSummary";
+import { findAllPublicPosts } from "@/lib/post/queries";
 
 export default async function PostList() {
-  const posts = await postRepository.findAllPublic();
+  const posts = await findAllPublicPosts();
 
   return (
     <div className="grid grid-cols-1 mb-16 gap-8 sm:grid-cols-2 lg:grid-cols-3">
