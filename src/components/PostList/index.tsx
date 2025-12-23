@@ -1,36 +1,36 @@
-import { postRepository } from "@/repositories/post/json-post-repository";
 import { PostCoverImage } from "../PostCoverImage";
-import { PostHeading } from "../PostHeading";
-import { formatDatetime, formatDistanceToNow } from "@/utils/format-datetime";
+
 import { PostSummary } from "../PostSummary";
+import { findAllPublicPosts } from "@/lib/post/queries";
 
 export default async function PostList() {
-  const posts = await postRepository.findAll();
+  const posts = await findAllPublicPosts();
 
   return (
-    <div className="grid grid-cols-1   gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {posts.map((post) => {
+    <div className="grid grid-cols-1 mb-16 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {posts.slice(1).map((post) => {
         const postLink = `/post/${post.slug}`;
+
         return (
-          <div className="flex flex-col  group gap-4" key={post.id}>
+          <div className="flex flex-col gap-4 group" key={post.id}>
             <PostCoverImage
               linkProps={{
                 href: postLink,
               }}
               imageProps={{
                 width: 1200,
-                height: 700,
+                height: 720,
                 src: post.coverImageUrl,
                 alt: post.title,
-                priority: true,
               }}
             />
+
             <PostSummary
               postLink={postLink}
               postHeading="h2"
-              title={post.title}
               createdAt={post.createdAt}
               excerpt={post.excerpt}
+              title={post.title}
             />
           </div>
         );

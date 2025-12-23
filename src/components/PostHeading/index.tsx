@@ -16,7 +16,7 @@ export function PostHeading({
     h2: "text-2xl font-bold ",
   };
 
-  const commonClasses = "";
+  const commonClasses = "font-extrabold";
 
   return (
     <Tag className={clsx(headingClassesMap[Tag], commonClasses)}>
