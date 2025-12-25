@@ -2,6 +2,7 @@ import clsx from "clsx";
 
 type SpinLoaderProps = {
   containerClass?: string;
+  className?: string;
 };
 export function SpinLoader({ containerClass }: SpinLoaderProps) {
   const classes = clsx(
