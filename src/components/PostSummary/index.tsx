@@ -16,7 +16,7 @@ export async function PostSummary({
   excerpt,
 }: PostSummaryProps) {
   return (
-    <div className="flex flex-col hover:text-slate-700 transitiongap-4 sm:justify-center">
+    <div className="flex flex-col hover:text-slate-700 transition gap-4 sm:justify-center">
       <time
         className="text-slate-600 text-sm/tight "
         dateTime={createdAt}
