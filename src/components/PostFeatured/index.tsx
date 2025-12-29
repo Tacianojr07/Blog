@@ -1,6 +1,6 @@
-import { postRepository } from "@/repositories/post/json-post-repository";
 import { PostCoverImage } from "../PostCoverImage";
 import { PostSummary } from "../PostSummary";
+import { postRepository } from "@/repositories/post";
 
 export async function PostFeatured() {
   const posts = await postRepository.findAllPublic();
