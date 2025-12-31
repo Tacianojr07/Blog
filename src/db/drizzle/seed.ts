@@ -1,9 +1,9 @@
-import { JsonPostRepository } from "@/repositories/post/json-post-repository";
+import { DrizzlePostRepository } from "@/repositories/drizzle-post-respository";
 import { drizzleDb } from ".";
 import { postsTable } from "./schemas";
 
 (async () => {
-  const jsonPostRepository = new JsonPostRepository();
+  const jsonPostRepository = new DrizzlePostRepository();
   const posts = await jsonPostRepository.findAll();
 
   try {
