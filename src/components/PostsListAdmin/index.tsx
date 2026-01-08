@@ -1,6 +1,5 @@
 import { findAllPostAdmin } from "@/lib/post/queries/admin";
 import { clsx } from "clsx";
-import { Delete, Trash2Icon } from "lucide-react";
 import Link from "next/link";
 import { DeletePostAdmin } from "../admin/DeletePostAdmin";
 
@@ -8,7 +7,7 @@ export default async function PostsListAdmin() {
   const posts = await findAllPostAdmin();
 
   return (
-    <div className="py-2 px-2">
+    <div className="mb-16">
       {posts.map((post) => {
         return (
           <div

@@ -1,7 +1,6 @@
 "use client";
 
 import clsx from "clsx";
-import { on } from "events";
 
 type DialogProps = {
   isVisible?: boolean;
