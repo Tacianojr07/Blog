@@ -20,8 +20,12 @@ export function DeletePostAdmin({ id, title }: DeletePostAdminProps) {
   function handleConfirmDeletePost() {
     startTransition(async () => {
       const result = await deletePostAction(id);
-      alert(`vai apagar ${result} ${id}`);
+
       setShowDialog(false);
+
+      if (result.error) {
+        alert(`Erro: ${result.error}`);
+      }
     });
   }
 
