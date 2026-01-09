@@ -1,9 +1,16 @@
+import { ErroMessage } from "../ErrorMessage";
 import { PostCoverImage } from "../PostCoverImage";
 import { PostSummary } from "../PostSummary";
 import { postRepository } from "@/repositories/post";
 
 export async function PostFeatured() {
   const posts = await postRepository.findAllPublic();
+
+  if (posts.length === 0)
+    return (
+      <ErroMessage contentTitle="Ops!" content="Nenhum post foi encontrado." />
+    );
+
   const post = posts[0];
 
   const postLink = `/post/${post.slug}`;
