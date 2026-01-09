@@ -4,6 +4,7 @@ import { clsx } from "clsx";
 import { Trash2Icon } from "lucide-react";
 import { useState, useTransition } from "react";
 import Dialog from "../Dialog";
+import { toast } from "react-toastify";
 
 type DeletePostAdminProps = {
   id: string;
@@ -18,15 +19,18 @@ export function DeletePostAdmin({ id, title }: DeletePostAdminProps) {
   }
 
   function handleConfirmDeletePost() {
+    toast.dismiss();
     startTransition(async () => {
       const result = await deletePostAction(id);
 
       setShowDialog(false);
 
       if (result.error) {
-        alert(`Erro: ${result.error}`);
+        toast.error(`Erro: ${result.error}`);
       }
+      return;
     });
+    toast.success("Post apagado com sucesso!");
   }
 
   function handleCancelDeletePost() {
